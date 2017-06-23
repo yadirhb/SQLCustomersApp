@@ -97,7 +97,7 @@ public class DBManager {
     private void createDatabase() {
         try {
             // Open a connection
-            getConnection();
+            con = DriverManager.getConnection(DB_HOST, USER_NAME, PASSWORD);
             Statement statement = con.createStatement();
             statement.executeUpdate("CREATE DATABASE IF NOT EXISTS " + DB_NAME);
             con.close();
